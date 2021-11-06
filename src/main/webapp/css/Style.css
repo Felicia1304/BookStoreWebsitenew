@@ -1,0 +1,94 @@
+@charset "ISO-8859-1";
+
+#headermenu {
+	display: table;
+}
+
+#headermenu div {
+	display:table-cell; 
+	padding-right: 20px;
+}
+
+a:link {
+	color: cornflowerBlue;
+	text-decoration: none;
+}
+
+a:visited {
+	color: blue;
+}
+
+a:hover {
+	color: green;
+	text-decoration: underline;
+}
+
+a:active {
+	color: red;
+}
+
+#headermenu a:link {
+	font-size: larger;
+}
+
+.pageheading {
+	color: #ec2f92;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+
+th, td {
+	padding: 8px;
+}
+
+th {
+	background: #65dace;
+	color: white;
+	font-size: larger;
+}
+
+table.form {
+	border: 0;
+	padding: 4px;
+}
+
+button {
+	padding: 6px;
+	border-radius: 5px;
+}
+
+button[type=submit] {
+	font-weight: bold;
+}
+
+button:hover {
+	background-color: white;
+	color: blue;
+}
+
+input {
+	border: 1px solid;
+	border-radius: 4px;
+	border-color: darkblue;
+	height: 20px;
+}
+
+.message {
+	font-style: italic;
+	color: #8000ff;
+}
+
+.error {
+	color: red;
+	font-style: italic;
+	margin: 5px;
+}
+
+
+
+
+

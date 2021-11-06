@@ -1,20 +1,44 @@
-<div>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div align="center">
 	<img src="../images/Adminlogo.png"/>
+	</div>
 	<div align="center">
-		Welcome Admin! | <a href="Logout">Logout</a>
+		Welcome <c:out value="${sessionScope.useremail}" />! | <a href="Logout">Logout</a>
 		<br/><br/>
 	</div>
-	
-	<div align="center">
-		<b>
-		<a href="list_users">Users</a> | 
-		<a href="categories">Categories</a> |
-		<a href="books">Books</a> |
-		<a href="customer">Customers</a> | 
-		<a href="reviews">Reviews</a> |
-		<a href="orders">Orders</a>
-		</b>
+<div align="center">
+	<div id="headermenu">
+		<div class="menu_item">
+			<a href="list_users">
+				<img src = "../images/User.png" /><br/>Users
+			</a>
+		</div>
+		<div>
+			<a href="list_category">
+				<img src = "../images/Category.png" /><br/>Categories
+			</a>
+		</div>
+		<div>
+			<a href="list_books">
+				<img src = "../images/Book.png" /><br/>Books
+			</a>
+		</div>
+		<div>
+			<a href="customer"> 
+				<img src = "../images/Customer.png" /><br/>Customers
+			</a>
+		</div>
+		<div>
+			<a href="reviews">
+				<img src = "../images/Review.png" /><br/>Reviews
+			</a>
+		</div>
+		<div>
+			<a href="orders">
+				<img src = "../images/Order.png" /><br/>Orders
+			</a>
+		</div>
 	</div>
-	
 </div>
+
 	

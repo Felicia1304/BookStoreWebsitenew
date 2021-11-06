@@ -96,7 +96,7 @@ public class Customer implements java.io.Serializable {
 		this.email = email;
 	}
 
-	@Column(name = "fullname", nullable = false, length = 30)
+	@Column(name = "Full_name", nullable = false, length = 30)
 	public String getFullName() {
 		return this.fullName;
 	}
@@ -105,7 +105,7 @@ public class Customer implements java.io.Serializable {
 		this.fullName = fullName;
 	}
 
-	@Column(name = "address", nullable = false, length = 128)
+	@Column(name = "Address", nullable = false, length = 128)
 	public String getAddress() {
 		return this.address;
 	}
@@ -114,7 +114,7 @@ public class Customer implements java.io.Serializable {
 		this.address = address;
 	}
 
-	@Column(name = "city", nullable = false, length = 32)
+	@Column(name = "City", nullable = false, length = 32)
 	public String getCity() {
 		return this.city;
 	}
@@ -123,7 +123,7 @@ public class Customer implements java.io.Serializable {
 		this.city = city;
 	}
 
-	@Column(name = "country", nullable = false, length = 64)
+	@Column(name = "Country", nullable = false, length = 64)
 	public String getCountry() {
 		return this.country;
 	}
@@ -132,7 +132,7 @@ public class Customer implements java.io.Serializable {
 		this.country = country;
 	}
 
-	@Column(name = "phone", nullable = false, length = 15)
+	@Column(name = "Phone_no", nullable = false, length = 15)
 	public int getPhoneNo() {
 		return this.phoneNo;
 	}
@@ -141,7 +141,7 @@ public class Customer implements java.io.Serializable {
 		this.phoneNo = phoneNo;
 	}
 
-	@Column(name = "zipcode", nullable = false, length = 24)
+	@Column(name = "Zip_code", nullable = false, length = 24)
 	public String getZipCode() {
 		return this.zipCode;
 	}
@@ -150,7 +150,7 @@ public class Customer implements java.io.Serializable {
 		this.zipCode = zipCode;
 	}
 
-	@Column(name = "password", nullable = false, length = 16)
+	@Column(name = "Password", nullable = false, length = 16)
 	public String getPassword() {
 		return this.password;
 	}
@@ -160,7 +160,7 @@ public class Customer implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "register_date", nullable = false, length = 19)
+	@Column(name = "Register_date", nullable = false, length = 19)
 	public Date getRegisterDate() {
 		return this.registerDate;
 	}

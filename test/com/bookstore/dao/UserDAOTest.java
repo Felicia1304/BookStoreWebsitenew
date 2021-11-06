@@ -108,6 +108,24 @@ public class UserDAOTest extends BaseDAOTest {
 	}
 	
 	@Test
+	public void testCheckLoginSuccess() {
+		String email = "Felicia@gmail.com";
+		String password = "asdfg";
+		boolean loginResult = userDAO.checkLogin(email, password);
+		
+		assertTrue(loginResult);
+	}
+	
+	@Test
+	public void testCheckLoginFailed() {
+		String email = "Felicia123";
+		String password = "asdfg12";
+		boolean loginResult = userDAO.checkLogin(email, password);
+		
+		assertFalse(loginResult);
+	}
+	
+	@Test
 	public void testFindByEmail() {
 		String email = "Felicia@gmail.com";
 		Users user = userDAO.findByEmail(email);

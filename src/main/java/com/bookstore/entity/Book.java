@@ -1,5 +1,4 @@
 package com.bookstore.entity;
-// Generated Oct 11, 2021, 10:02:13 PM by Hibernate Tools 5.5.7.Final
 
 import java.util.Base64;
 import java.util.Comparator;

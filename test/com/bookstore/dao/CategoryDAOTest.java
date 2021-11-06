@@ -2,6 +2,8 @@ package com.bookstore.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -33,8 +35,8 @@ public class CategoryDAOTest extends BaseDAOTest {
 
 	@Test
 	public void testUpdateCategory() {
-		Category cat = new Category("Horror");
-		cat.setCategoryId(4);
+		Category cat = new Category("11th CBSE");
+		cat.setCategoryId(3);
 		
 		Category category = categoryDAO.update(cat);
 		
@@ -43,22 +45,51 @@ public class CategoryDAOTest extends BaseDAOTest {
 
 	@Test
 	public void testGet() {
-		fail("Not yet implemented");
+		Integer catId = 23;
+		Category cat = categoryDAO.get(catId);
+		
+		assertNotNull(cat);
 	}
+	
 
 	@Test
-	public void testDeleteObject() {
-		fail("Not yet implemented");
+	public void testDeleteCategory() {
+		Integer catId = 3;
+		categoryDAO.delete(catId);
+		
+		Category cat = categoryDAO.get(catId);
+		
+		assertNull(cat);
 	}
 
 	@Test
 	public void testListAll() {
-		fail("Not yet implemented");
+		List<Category> listCategory = categoryDAO.listAll();
+		
+		assertTrue(listCategory.size() > 0);
 	}
 
 	@Test
 	public void testCount() {
-		fail("Not yet implemented");
+		long totalCategories = categoryDAO.count();
+		
+		assertEquals(3, totalCategories);
 	}
 
+	@Test
+	public void testFindByName() {
+		String name = "Java";
+		Category category = categoryDAO.findByName(name);
+		
+		assertNotNull(category);
+	}
+	
+	@Test
+	public void testFindByNameNotFound() {
+		String name = "JavaCore";
+		Category category = categoryDAO.findByName(name);
+		
+		assertNull(category);
+	}
+	
 }
