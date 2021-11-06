@@ -116,11 +116,11 @@ public class BookDAOTest extends BaseDAOTest {
 	@Test
 	public void testListAll() {
 		List<Book> listBooks = bookDao.listAll();
-		/*
+		
 		for (Book aBook : listBooks) {
 			System.out.println(aBook.getTitle() + " - " + aBook.getAuthor());
 		}
-		*/
+		
 		assertFalse(listBooks.isEmpty());
 	}
 	
