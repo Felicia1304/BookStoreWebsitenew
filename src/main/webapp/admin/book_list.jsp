@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +16,7 @@
 	
 	<div align = "center">
 		<h2 class="pageheading">Books Management</h2>
-		<h3><a href = "book_form.jsp">Create New Book</a></h3>
+		<h3><a href = "new_book">Create New Book</a></h3>
 	</div>
 	
 	<c:if test="${message != null}">
@@ -42,12 +43,18 @@
 					<td>${status.index + 1}</td>
 					<td>${book.bookId}</td>
 					
-					<td></td>
+					<td>
+						<img src="data:image/jpg;base64,${book.base64Image}" width="84" height="110"/>
+					</td>
 					
 					<td>${book.title}</td>
+					<td>${book.author}</td>
+					<td>${book.category.cname}</td>
+					<td>Rs.${book.price}</td>
+					<td><fmt:formatDate pattern='MM/dd/yyyy' value='${book.lastUpdateTime}' /></td>
 					<td>
-						<a href = "edit_user?id=${user.userId}">Edit</a> &nbsp;
-						<a href = "javascript:void(0);" class="deleteLink" id="${user.userId}">Delete</a>
+						<a href = "edit_book?id=${book.bookId}">Edit</a> &nbsp;
+						<a href = "javascript:void(0);" class="deleteLink" id="${book.bookId}">Delete</a>
 					</td>
 				</tr>
 			</c:forEach>
@@ -60,9 +67,9 @@
 		$(document).ready(function() {
 			$(".deleteLink").each(function() {
 				$(this).on("click", function() {
-					userId = $(this).attr("id");	
-					if (confirm('Are you sure you want to delete the user with ID ' + userId + '?')) {
-						window.location = "delete_user?id=" + userId;
+					bookId = $(this).attr("id");	
+					if (confirm('Are you sure you want to delete the book with ID ' + bookId + '?')) {
+						window.location = "delete_book?id=" + bookId;
 					}
 				});
 			});

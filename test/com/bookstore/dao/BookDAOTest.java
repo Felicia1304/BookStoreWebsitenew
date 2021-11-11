@@ -20,18 +20,17 @@ import org.junit.Test;
 import com.bookstore.entity.Book;
 import com.bookstore.entity.Category;
 
-public class BookDAOTest extends BaseDAOTest {
+public class BookDAOTest {
 	private static BookDAO bookDao;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		BaseDAOTest.setUpBeforeClass();
-		bookDao = new BookDAO(entityManager);
+		bookDao = new BookDAO();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		BaseDAOTest.tearDownAfterClass();
+		bookDao.close();
 	}
 	
 	@Test
@@ -156,5 +155,53 @@ public class BookDAOTest extends BaseDAOTest {
 		bookDao.delete(bookId);
 		
 		assertTrue(true);
+	}
+	
+	@Test
+	public void testListNewBooks() {
+		List<Book> listNewBooks = bookDao.listNewBooks();
+		for (Book aBook : listNewBooks) {
+			System.out.println(aBook.getTitle() + " - " + aBook.getPublishDate());
+		}
+		assertEquals(4, listNewBooks.size());
+	}
+	
+	@Test
+	public void testSearchBookInTitle(){
+	  String keyword= "Java";
+	  List<Book> result = bookDao.search(keyword);
+	  for(Book aBook: result) {
+	      System.out.println(aBook.getTitle());
+	  }
+	  assertEquals(6,result.size());
+	}
+	
+	@Test
+	public void testSearchBookInAuthor(){
+	  String keyword= "Joshua Bloch";
+	  List<Book> result = bookDao.search(keyword);
+	  for(Book aBook: result) {
+	      System.out.println(aBook.getTitle());
+	  }
+	  assertEquals(1,result.size());
+	}
+	
+	@Test
+	public void testSearchBookInDescription(){
+	  String keyword= "Nutshell";
+	  List<Book> result = bookDao.search(keyword);
+	  for(Book aBook: result) {
+	      System.out.println(aBook.getTitle());
+	  }
+	  assertEquals(1,result.size());
+	}
+	
+	@Test
+	public void testListByCategory() {
+		Integer categoryId = 2;
+		
+		List<Book> listBooks = bookDao.listByCategory(categoryId);
+		
+		assertTrue(listBooks.size() > 0);
 	}
 }
