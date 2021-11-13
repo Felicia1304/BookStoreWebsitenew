@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div align="center">
-	<img src="../images/Adminlogo.png"/>
+	<a href="${pageContext.request.contextPath}/admin/">
+		<img src="../images/Adminlogo.png"/>
+	</a>
 	</div>
 	<div align="center">
 		Welcome <c:out value="${sessionScope.useremail}" />! | <a href="Logout">Logout</a>
@@ -24,7 +26,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="customer"> 
+			<a href="list_customer"> 
 				<img src = "../images/Customer.png" /><br/>Customers
 			</a>
 		</div>

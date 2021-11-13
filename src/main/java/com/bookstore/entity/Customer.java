@@ -1,5 +1,4 @@
 package com.bookstore.entity;
-// Generated Oct 11, 2021, 10:02:13 PM by Hibernate Tools 5.5.7.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -30,13 +29,13 @@ import javax.persistence.UniqueConstraint;
 public class Customer implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int customerId;
+	private Integer customerId;
 	private String email;
 	private String fullName;
 	private String address;
 	private String city;
 	private String country;
-	private int phoneNo;
+	private String phoneNo;
 	private String zipCode;
 	private String password;
 	private Date registerDate;
@@ -46,9 +45,8 @@ public class Customer implements java.io.Serializable {
 	public Customer() {
 	}
 
-	public Customer(int customerId, String email, String fullName, String address, String city, String country,
-			int phoneNo, String zipCode, String password, Date registerDate) {
-		this.customerId = customerId;
+	public Customer(String email, String fullName, String address, String city, String country,
+			String phoneNo, String zipCode, String password, Date registerDate) {
 		this.email = email;
 		this.fullName = fullName;
 		this.address = address;
@@ -60,9 +58,8 @@ public class Customer implements java.io.Serializable {
 		this.registerDate = registerDate;
 	}
 
-	public Customer(int customerId, String email, String fullName, String address, String city, String country,
-			int phoneNo, String zipCode, String password, Date registerDate, Set<Review> reviews, Set<BookOrder> bookOrders) {
-		this.customerId = customerId;
+	public Customer(String email, String fullName, String address, String city, String country,
+			String phoneNo, String zipCode, String password, Date registerDate, Set<Review> reviews, Set<BookOrder> bookOrders) {
 		this.email = email;
 		this.fullName = fullName;
 		this.address = address;
@@ -79,11 +76,11 @@ public class Customer implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "customer_id", unique = true, nullable = false)
-	public int getCustomerId() {
+	public Integer getCustomerId() {
 		return this.customerId;
 	}
 
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 
@@ -133,11 +130,11 @@ public class Customer implements java.io.Serializable {
 	}
 
 	@Column(name = "Phone_no", nullable = false, length = 15)
-	public int getPhoneNo() {
+	public String getPhoneNo() {
 		return this.phoneNo;
 	}
 
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 
