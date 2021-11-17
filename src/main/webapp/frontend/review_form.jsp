@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Customer Login</title>
+	<title>Write Review</title>
 	<link rel="stylesheet" href="css/Style.css" >
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
@@ -14,27 +14,26 @@
 	<jsp:directive.include file="Header.jsp" />
 	
 	<div align="center">
-		<h2>Customer Login</h2>
-		
-		<c:if test="${message != null}">
-			<div align = "center">
-				<h4 class="message">${message}</h4>
-			</div>
-		</c:if>
-		
-		<form id="Loginform" action="Login" method="post">
-			<table>
+		<form>
+			<table class="normal" width="60%">
 				<tr>
-					<td>Email:</td>
-					<td><input type="text" name="email" id="email" size="20"></td>
+					<td><h2>Your Reviews</h2></td>
+					<td>&nbsp;</td>
+					<td><h2>${loggedCustomer.fullName}</h2></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
-					<td><input type="password" name="password" id="password" size="20"></td>
+					<td colspan="3"><hr/></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">
-						<button type="submit">Login</button>
+					<td>
+						<span id="book-title">${book.title}</span>
+						<img class="book_large" src="data:image/jpg;base64,${book.base64Image}" />
+					</td>
+					<td>
+						<input type="text" name="headline" size="60" placeholder="Headline or summary for your review (required)" />
+						<br/>
+						<br/>
+						<textarea name="comment" cols="70" row="10" placeholder="Write your review details..."></textarea>
 					</td>
 				</tr>
 			</table>

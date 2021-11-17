@@ -10,10 +10,18 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="submit" value="Search" />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="Login">Sign-In</a>
-			&nbsp;&nbsp;&nbsp;
-			<a href="register">Register</a>
-			&nbsp;&nbsp;&nbsp;
+			
+			<c:if test="${loggedCustomer == null}">
+				<a href="Login">Sign-In</a> |
+				<a href="register">Register</a> |
+			</c:if>
+			
+			<c:if test="${loggedCustomer != null}">
+				<a href="view_profile">Welcome, ${loggedCustomer.fullName}</a> |
+				<a href="view_orders">My Orders</a> |
+				<a href="Logout">Logout</a> |
+			</c:if>
+			
 			<a href="view_cart">Cart</a>
 	</form>
 	<div>&nbsp;</div>
