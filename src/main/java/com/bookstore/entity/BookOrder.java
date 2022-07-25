@@ -1,5 +1,4 @@
 package com.bookstore.entity;
-// Generated Oct 11, 2021, 10:02:13 PM by Hibernate Tools 5.5.7.Final
 
 import java.util.Date;
 import java.util.HashSet;
@@ -47,9 +46,9 @@ public class BookOrder implements java.io.Serializable {
 	public BookOrder() {
 	}
 
-	public BookOrder(Integer orderId, Customer customer, Date orderDate, String shippingAddress, String recipientName,
+	public BookOrder(Customer customer, Date orderDate, String shippingAddress, String recipientName,
 			String recipientPhoneNo, String paymentMethod, float orderTotal, String orderStatus) {
-		this.orderId = orderId;
+		//this.orderId = orderId;
 		this.customer = customer;
 		this.orderDate = orderDate;
 		this.shippingAddress = shippingAddress;
@@ -60,9 +59,9 @@ public class BookOrder implements java.io.Serializable {
 		this.orderStatus = orderStatus;
 	}
 
-	public BookOrder(Integer orderId, Customer customer, Date orderDate, String shippingAddress, String recipientName,
+	public BookOrder(Customer customer, Date orderDate, String shippingAddress, String recipientName,
 			String recipientPhoneNo, String paymentMethod, float orderTotal, String orderStatus, Set<OrderDetail> orderDetails) {
-		this.orderId = orderId;
+		//this.orderId = orderId;
 		this.customer = customer;
 		this.orderDate = orderDate;
 		this.shippingAddress = shippingAddress;
@@ -86,7 +85,7 @@ public class BookOrder implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "cutomer_id", nullable = false)
+	@JoinColumn(name = "customer_id", nullable = false)
 	public Customer getCustomer() {
 		return this.customer;
 	}
@@ -123,7 +122,7 @@ public class BookOrder implements java.io.Serializable {
 		this.recipientName = recipientName;
 	}
 
-	@Column(name = "recipient_phone", nullable = false, length = 15)
+	@Column(name = "recipient_phone_no", nullable = false, length = 15)
 	public String getRecipientPhoneNo() {
 		return this.recipientPhoneNo;
 	}
@@ -141,7 +140,7 @@ public class BookOrder implements java.io.Serializable {
 		this.paymentMethod = paymentMethod;
 	}
 
-	@Column(name = "total", nullable = false, precision = 12, scale = 0)
+	@Column(name = "order_total", nullable = false, precision = 12, scale = 0)
 	public float getOrderTotal() {
 		return this.orderTotal;
 	}
@@ -150,7 +149,7 @@ public class BookOrder implements java.io.Serializable {
 		this.orderTotal = orderTotal;
 	}
 
-	@Column(name = "status", nullable = false, length = 20)
+	@Column(name = "order_status", nullable = false, length = 20)
 	public String getOrderStatus() {
 		return this.orderStatus;
 	}

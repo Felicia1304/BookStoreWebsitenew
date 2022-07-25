@@ -12,8 +12,6 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-// Generated Oct 11, 2021, 10:02:13 PM by Hibernate Tools 5.5.7.Final
-
 
 @Entity
 @Table(name = "order_detail", catalog = "bookstoredb")
@@ -63,6 +61,7 @@ public class OrderDetail implements java.io.Serializable {
 
 	public void setBook(Book book) {
 		this.book = book;
+		this.id.setBook(book);
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -73,6 +72,7 @@ public class OrderDetail implements java.io.Serializable {
 
 	public void setBookOrder(BookOrder bookOrder) {
 		this.bookOrder = bookOrder;
+		this.id.setBookOrder(bookOrder);
 	}
 
 	@Column(name = "quantity", nullable = false)
@@ -84,7 +84,7 @@ public class OrderDetail implements java.io.Serializable {
 		this.quantity = quantity;
 	}
 	
-	@Column(name = "subtotal", nullable = false, precision = 12, scale = 0)
+	@Column(name = "sub_total", nullable = false, precision = 12, scale = 0)
 	public float getSubtotal() {
 		return this.subtotal;
 	}

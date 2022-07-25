@@ -5,15 +5,11 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-// Generated Oct 11, 2021, 10:02:13 PM by Hibernate Tools 5.5.7.Final
 
 
 @Embeddable
 public class OrderDetailId implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private Book book;
 	private BookOrder bookOrder;
