@@ -36,7 +36,7 @@
 			</a>
 		</div>
 		<div>
-			<a href="orders">
+			<a href="list_order">
 				<img src = "../images/Order.png" /><br/>Orders
 			</a>
 		</div>

@@ -2,7 +2,6 @@ package com.bookstore.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
 
 import com.bookstore.entity.Category;
 
